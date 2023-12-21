@@ -46,9 +46,10 @@ export default {}
   object-fit: cover;
 }
 .title {
-  font-size: 56px;
+  font-size: 46px;
   font-family: var(--decor);
   font-weight: 600;
+  text-transform: uppercase;
 }
 .top p {
   font-size: 18px;
