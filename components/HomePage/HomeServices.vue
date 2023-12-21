@@ -31,7 +31,8 @@
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
               maiores hic, recusandae accusamus voluptatem obcaecati, quod nihil
               cupiditate sint voluptatibus unde quaerat, doloribus tenetur!
-              Pariatur architecto et error cumque voluptates.
+              Pariatur architecto et error cumque voluptates. quod nihil
+              cupiditate sint voluptatibus unde quaerat, doloribus tenetur!
             </p>
           </div>
           <div class="right">
@@ -99,7 +100,8 @@
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
               maiores hic, recusandae accusamus voluptatem obcaecati, quod nihil
               cupiditate sint voluptatibus unde quaerat, doloribus tenetur!
-              Pariatur architecto et error cumque voluptates.
+              Pariatur architecto et error cumque voluptates. Lorem ipsum dolor
+              sit amet.
             </p>
           </div>
           <div class="right">
@@ -166,8 +168,7 @@
             <p class="text">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
               maiores hic, recusandae accusamus voluptatem obcaecati, quod nihil
-              cupiditate sint voluptatibus unde quaerat, doloribus tenetur!
-              Pariatur architecto et error cumque voluptates.
+              cupiditate sint voluptatibus unde quaerat
             </p>
           </div>
           <div class="right">

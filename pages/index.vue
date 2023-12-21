@@ -5,7 +5,10 @@
       <HomeHero />
       <HomeServices />
       <HomeGallery :photos="photos" />
+      <HomeOffer />
+      <HomeWorkflow />
     </main>
+    <DesktopFooter />
   </div>
 </template>
 
