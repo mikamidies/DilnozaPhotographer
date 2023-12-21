@@ -64,11 +64,12 @@
             </div>
           </div>
           <div class="mid">
-            <p class="text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
-              enim dolor aperiam voluptatum officiis, voluptas animi voluptate
-              praesentium illum unde laborum inventore quo pariatur sint?
-            </p>
+            <h4 class="title">Send Application</h4>
+            <form>
+              <input type="text" placeholder="Your name" />
+              <input type="text" placeholder="Phone number" />
+              <button>Submit</button>
+            </form>
           </div>
           <div class="right">
             <img src="@/assets/img/person.jpg" alt="" />
@@ -103,7 +104,7 @@ export default {}
   justify-content: center;
 }
 .right img {
-  width: 70%;
+  width: 75%;
   height: 320px;
   object-fit: cover;
   margin: 0 auto;
@@ -139,5 +140,28 @@ export default {}
   display: flex;
   align-items: center;
   gap: 12px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 85%;
+}
+input {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 12px 0;
+  color: white;
+}
+input:focus {
+  outline: none;
+}
+button {
+  padding: 14px 0;
+  background: var(--main);
+  border: 0;
+  margin-top: 12px;
+  cursor: pointer;
 }
 </style>
