@@ -95,4 +95,10 @@ export default {}
   background: var(--main);
   color: white;
 }
+@media screen and (max-width: 1024px) {
+  .right,
+  .mid {
+    display: none;
+  }
+}
 </style>

@@ -118,4 +118,35 @@ export default {}
   display: block;
   margin-bottom: 16px;
 }
+@media screen and (max-width: 1024px) {
+  .wrap {
+    padding: 20px 0;
+  }
+  .items {
+    margin-top: 20px;
+    gap: 16px;
+  }
+  .item {
+    flex-direction: column !important;
+    gap: 16px;
+  }
+  .img {
+    width: 100%;
+  }
+  .content {
+    width: 100%;
+  }
+  .pic {
+    width: 100%;
+    height: 320px;
+  }
+  .name {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  .item p {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+}
 </style>

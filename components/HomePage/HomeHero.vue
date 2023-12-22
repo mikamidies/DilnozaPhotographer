@@ -55,4 +55,22 @@ export default {}
   font-size: 18px;
   line-height: 150%;
 }
+@media screen and (max-width: 1024px) {
+  .top {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .title {
+    font-size: 32px;
+  }
+  .top p {
+    font-size: 14px;
+    line-height: 150%;
+  }
+  .images {
+    gap: 8px;
+  }
+  .images img {
+    height: 180px;
+  }
+}
 </style>

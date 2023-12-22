@@ -350,4 +350,35 @@ export default {
 .right {
   position: relative;
 }
+@media screen and (max-width: 1024px) {
+  .wrap {
+    padding: 20px 0;
+  }
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .content.active {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 16px;
+  }
+  .buttons {
+    display: none;
+  }
+  .left {
+    gap: 8px;
+  }
+  .left button {
+    padding: 16px;
+  }
+  .swiper img {
+    height: 320px;
+  }
+  .header {
+    margin-bottom: 20px;
+  }
+  .mid p {
+    font-size: 14px;
+  }
+}
 </style>

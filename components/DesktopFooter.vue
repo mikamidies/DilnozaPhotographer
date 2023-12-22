@@ -164,4 +164,42 @@ button {
   margin-top: 12px;
   cursor: pointer;
 }
+@media screen and (max-width: 1024px) {
+  .wrap {
+    padding: 0;
+  }
+  .container {
+    padding: 0;
+  }
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+    max-width: 100%;
+    padding: 0 16px;
+    gap: 24px;
+  }
+  .cardo {
+    padding: 40px 0;
+  }
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  .sup {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  .item a {
+    font-size: 20px;
+  }
+  form {
+    max-width: 100%;
+  }
+  .right {
+    margin-top: 16px;
+  }
+  .right img {
+    width: 100%;
+  }
+}
 </style>

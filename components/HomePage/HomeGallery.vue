@@ -83,4 +83,34 @@ export default {
 .item:nth-child(8) {
   grid-column: 5 / 7;
 }
+@media screen and (max-width: 1024px) {
+  .wrap {
+    overflow: hidden;
+    padding: 20px 0;
+  }
+  .grid {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: auto;
+    margin-right: -16px;
+    padding-right: 16px;
+  }
+  .item {
+    width: 240px;
+    display: flex;
+  }
+  .pic {
+    width: 240px;
+    height: 320px;
+  }
+  .grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .grid {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
 </style>

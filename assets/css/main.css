@@ -183,4 +183,7 @@ body {
   .container {
     padding: 0 16px;
   }
+  .section__title {
+    font-size: 24px;
+  }
 }
