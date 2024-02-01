@@ -2,229 +2,46 @@
   <div class="wrap">
     <div class="container">
       <div class="header">
-        <h2 class="title section__title">Fields i work for</h2>
+        <h4 class="title section__title"></h4>
       </div>
       <div class="grid">
         <div class="left">
           <button
-            @click=";(servOne = true), (servTwo = false), (servThree = false)"
-            :class="{ active: servOne == true }"
+            v-for="item in services"
+            :key="item.id"
+            @click="activeTab = item.id"
+            :class="{ active: activeTab == item.id }"
           >
-            Wedding Photography
-          </button>
-          <button
-            @click=";(servOne = false), (servTwo = true), (servThree = false)"
-            :class="{ active: servTwo == true }"
-          >
-            Engagement Sessions
-          </button>
-          <button
-            @click=";(servOne = false), (servTwo = false), (servThree = true)"
-            :class="{ active: servThree == true }"
-          >
-            Bridal Portraits
+            {{ item.title }}
           </button>
         </div>
-        <div :class="{ active: servOne == true }" class="content">
+        <div
+          v-for="serv in services"
+          :key="serv.id"
+          :class="{ active: activeTab == serv.id }"
+          class="content"
+        >
           <div class="mid">
-            <p class="text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
-              maiores hic, recusandae accusamus voluptatem obcaecati, quod nihil
-              cupiditate sint voluptatibus unde quaerat, doloribus tenetur!
-              Pariatur architecto et error cumque voluptates. quod nihil
-              cupiditate sint voluptatibus unde quaerat, doloribus tenetur!
-            </p>
+            <p class="text" v-html="serv.desc"></p>
           </div>
           <div class="right">
             <div class="buttons">
               <div class="swiper-buttons">
-                <button class="prev">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <path
-                      d="M11.068 17.713L5.35501 12L11.068 6.28699M18.669 12H5.37201"
-                      stroke="black"
-                      stroke-width="1.5"
-                      stroke-miterlimit="10"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </button>
-                <button class="next">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <path
-                      d="M12.956 6.28699L18.669 12L12.956 17.713M5.35501 12H18.652"
-                      stroke="black"
-                      stroke-width="1.5"
-                      stroke-miterlimit="10"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </button>
+                <button class="prev" :class="`prev` + serv.id"></button>
+                <button class="next" :class="`next` + serv.id"></button>
               </div>
               <div class="pagination">
                 <div class="swiper-pagination"></div>
               </div>
             </div>
-            <div class="swiper servicesSwiper">
+            <div class="swiper servicesSwiper" :class="`swiper` + serv.id">
               <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="@/assets/img/hero-1.jpg" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="@/assets/img/hero-2.jpg" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="@/assets/img/hero-3.jpg" alt="" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div :class="{ active: servTwo == true }" class="content">
-          <div class="mid">
-            <p class="text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
-              maiores hic, recusandae accusamus voluptatem obcaecati, quod nihil
-              cupiditate sint voluptatibus unde quaerat, doloribus tenetur!
-              Pariatur architecto et error cumque voluptates. Lorem ipsum dolor
-              sit amet.
-            </p>
-          </div>
-          <div class="right">
-            <div class="buttons">
-              <div class="swiper-buttons">
-                <button class="prev">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <path
-                      d="M11.068 17.713L5.35501 12L11.068 6.28699M18.669 12H5.37201"
-                      stroke="black"
-                      stroke-width="1.5"
-                      stroke-miterlimit="10"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </button>
-                <button class="next">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <path
-                      d="M12.956 6.28699L18.669 12L12.956 17.713M5.35501 12H18.652"
-                      stroke="black"
-                      stroke-width="1.5"
-                      stroke-miterlimit="10"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </button>
-              </div>
-              <div class="pagination">
-                <div class="swiper-pagination"></div>
-              </div>
-            </div>
-            <div class="swiper servicesSwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="@/assets/img/hero-2.jpg" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="@/assets/img/hero-2.jpg" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="@/assets/img/hero-3.jpg" alt="" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div :class="{ active: servThree == true }" class="content">
-          <div class="mid">
-            <p class="text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
-              maiores hic, recusandae accusamus voluptatem obcaecati, quod nihil
-              cupiditate sint voluptatibus unde quaerat
-            </p>
-          </div>
-          <div class="right">
-            <div class="buttons">
-              <div class="swiper-buttons">
-                <button class="prev">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <path
-                      d="M11.068 17.713L5.35501 12L11.068 6.28699M18.669 12H5.37201"
-                      stroke="black"
-                      stroke-width="1.5"
-                      stroke-miterlimit="10"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </button>
-                <button class="next">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <path
-                      d="M12.956 6.28699L18.669 12L12.956 17.713M5.35501 12H18.652"
-                      stroke="black"
-                      stroke-width="1.5"
-                      stroke-miterlimit="10"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </button>
-              </div>
-              <div class="pagination">
-                <div class="swiper-pagination"></div>
-              </div>
-            </div>
-            <div class="swiper servicesSwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="@/assets/img/hero-3.jpg" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="@/assets/img/hero-2.jpg" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="@/assets/img/hero-3.jpg" alt="" />
+                <div
+                  v-for="photo in serv.images"
+                  :key="photo.id"
+                  class="swiper-slide"
+                >
+                  <img :src="photo.image" alt="" />
                 </div>
               </div>
             </div>
@@ -240,26 +57,28 @@ import Swiper from 'swiper/swiper-bundle.js'
 import 'swiper/swiper-bundle.min.css'
 
 export default {
+  props: ['services'],
+
   data() {
     return {
-      servOne: true,
-      servTwo: false,
-      servThree: false,
+      activeTab: 1,
     }
   },
 
   mounted() {
-    const swiper = new Swiper('.servicesSwiper', {
-      spaceBetween: 24,
-      slidesPerView: 1,
-      pagination: {
-        el: '.swiper-pagination',
-        type: 'fraction',
-      },
-      navigation: {
-        nextEl: '.next',
-        prevEl: '.prev',
-      },
+    this.services.forEach((element) => {
+      new Swiper('.swiper' + element.id, {
+        spaceBetween: 24,
+        slidesPerView: 1,
+        pagination: {
+          el: '.swiper-pagination' + element.id,
+          type: 'fraction',
+        },
+        navigation: {
+          nextEl: '.next' + element.id,
+          prevEl: '.prev' + element.id,
+        },
+      })
     })
   },
 }

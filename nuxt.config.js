@@ -24,7 +24,7 @@ export default {
   modules: ['@nuxtjs/axios'],
 
   axios: {
-    baseURL: 'https://admin.jahoninvestplast.com/api',
+    baseURL: 'https://apiphoto.pythonanywhere.com/api',
   },
 
   build: {

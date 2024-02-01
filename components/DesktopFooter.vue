@@ -4,71 +4,29 @@
       <div class="cardo">
         <div class="grid">
           <div class="left">
-            <h4 class="title">Contact Us</h4>
+            <h1 class="title"></h1>
             <div class="item">
-              <p class="sup">Phone</p>
-              <a href="tel:+998901400000"> +998 90 140 00 00 </a>
+              <p class="sup"></p>
+              <a href=""> </a>
             </div>
             <div class="item">
-              <p class="sup">Email</p>
-              <a href="mailto:mail@mail.com"> mail@mail.com </a>
+              <p class="sup"></p>
+              <a href="mailto:"> </a>
             </div>
             <div class="item">
-              <p class="sup">Email</p>
+              <p class="sup"></p>
               <div class="socs">
-                <a target="_blank" href="#">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <rect
-                      x="2"
-                      y="2"
-                      width="20"
-                      height="20"
-                      rx="4"
-                      stroke="#ffffff"
-                      stroke-width="1.5"
-                    />
-                    <circle cx="18" cy="6" r="1" fill="#ffffff" />
-                    <circle
-                      cx="12"
-                      cy="12"
-                      r="5"
-                      stroke="#ffffff"
-                      stroke-width="1.5"
-                    />
-                  </svg>
-                </a>
-                <a target="_blank" href="#">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <path
-                      d="M18 2H6C3.79086 2 2 3.79086 2 6V18C2 20.2091 3.79086 22 6 22H10.5V15H7V12H10.5V10C10.5 7.79086 12.2909 6 14.5 6H17V9H14.5C13.9477 9 13.5 9.44772 13.5 10V12H17V15H13.5V22H18C20.2091 22 22 20.2091 22 18V6C22 3.79086 20.2091 2 18 2Z"
-                      stroke="#ffffff"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </a>
+                <a target="_blank" href="#"> </a>
+                <a target="_blank" href="#"> </a>
               </div>
             </div>
           </div>
           <div class="mid">
-            <h4 class="title">Send Application</h4>
-            <form>
+            <h1 class="title"></h1>
+            <form @submit.prevent="onSubmit">
               <input type="text" placeholder="Your name" />
-              <input type="text" placeholder="Phone number" />
-              <button>Submit</button>
+              <input type="text" placeholder="" />
+              <button type="submit"></button>
             </form>
           </div>
           <div class="right">
@@ -81,7 +39,36 @@
 </template>
 
 <script>
-export default {}
+import formApi from '@/api/form.js'
+
+export default {
+  data() {
+    return {
+      name: '',
+      phone_number: '',
+    }
+  },
+
+  methods: {
+    async onSubmit() {
+      const formData = {
+        name: this.name,
+        phone_number: this.phone_number,
+      }
+
+      const res = await formApi.sendApplication(formData)
+
+      if (res && res.status === 201) {
+        this.$toast.success('Successfully sent')
+      } else {
+        this.$toast.error('Error')
+      }
+
+      this.name = ''
+      this.phone_number = ''
+    },
+  },
+}
 </script>
 
 <style scoped>

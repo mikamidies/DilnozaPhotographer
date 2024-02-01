@@ -1,49 +1,15 @@
 <template>
   <div class="wrap">
     <div class="container">
-      <h2 class="title section__title">My recent works</h2>
+      <h4 class="title section__title"></h4>
       <div class="grid" id="lightgallery">
-        <a class="item" href="../../assets/img/hero-1.jpg">
-          <img src="../../assets/img/hero-1.jpg" alt="" class="pic" />
-        </a>
-        <a class="item" href="../../assets/img/hero-2.jpg">
-          <img src="../../assets/img/hero-2.jpg" alt="" class="pic" />
-        </a>
-        <a class="item" href="../../assets/img/hero-3.jpg">
-          <img src="../../assets/img/hero-3.jpg" alt="" class="pic" />
-        </a>
-        <a class="item" href="../../assets/img/hero-1.jpg">
-          <img src="../../assets/img/hero-1.jpg" alt="" class="pic" />
-        </a>
-        <a class="item" href="../../assets/img/hero-2.jpg">
-          <img src="../../assets/img/hero-2.jpg" alt="" class="pic" />
-        </a>
-        <a class="item" href="../../assets/img/hero-3.jpg">
-          <img src="../../assets/img/hero-3.jpg" alt="" class="pic" />
-        </a>
-        <a class="item" href="../../assets/img/hero-1.jpg">
-          <img src="../../assets/img/hero-1.jpg" alt="" class="pic" />
-        </a>
-        <a class="item" href="../../assets/img/hero-1.jpg">
-          <img src="../../assets/img/hero-1.jpg" alt="" class="pic" />
-        </a>
-        <a class="item" href="../../assets/img/hero-1.jpg">
-          <img src="../../assets/img/hero-1.jpg" alt="" class="pic" />
-        </a>
-        <a class="item" href="../../assets/img/hero-1.jpg">
-          <img src="../../assets/img/hero-1.jpg" alt="" class="pic" />
-        </a>
-        <a class="item" href="../../assets/img/hero-1.jpg">
-          <img src="../../assets/img/hero-1.jpg" alt="" class="pic" />
-        </a>
-        <a class="item" href="../../assets/img/hero-1.jpg">
-          <img src="../../assets/img/hero-1.jpg" alt="" class="pic" />
-        </a>
-        <a class="item" href="../../assets/img/hero-1.jpg">
-          <img src="../../assets/img/hero-1.jpg" alt="" class="pic" />
-        </a>
-        <a class="item" href="../../assets/img/hero-1.jpg">
-          <img src="../../assets/img/hero-1.jpg" alt="" class="pic" />
+        <a
+          v-for="item in photos"
+          :key="item.id"
+          class="item"
+          :href="item.image"
+        >
+          <img :src="item.image" alt="" class="pic" />
         </a>
       </div>
     </div>
@@ -52,6 +18,7 @@
 
 <script>
 export default {
+  props: ['photos'],
   mounted() {
     const el = document.getElementById('lightgallery')
     window.lightGallery(el)

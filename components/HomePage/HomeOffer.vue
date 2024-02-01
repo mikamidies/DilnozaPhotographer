@@ -1,68 +1,15 @@
 <template>
   <div class="wrap">
     <div class="container">
-      <h2 class="title section__title">What i offer</h2>
+      <h4 class="title section__title"></h4>
       <div class="items">
-        <div class="item">
+        <div v-for="item in services" :key="item.id" class="item">
           <div class="img">
-            <img src="@/assets/img/hero-1.jpg" alt="" class="pic" />
+            <img :src="item.images[0].image" alt="" class="pic" />
           </div>
           <div class="content">
-            <h4 class="name">Weddings</h4>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Accusamus fugit dolorum earum, non possimus quaerat omnis dolorem,
-              sapiente temporibus perspiciatis harum laboriosam repellendus quo
-              molestias quas mollitia! Unde accusantium repellat officiis qui,
-              facere eligendi sint alias, suscipit nemo dolorem illo!
-            </p>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Accusamus fugit dolorum earum, non possimus quaerat omnis dolorem,
-              sapiente temporibus perspiciatis harum laboriosam repellendus quo
-              molestias quas mollitia! Unde accusantium repellat officiis qui,
-              facere eligendi sint alias, suscipit nemo dolorem illo!
-            </p>
-          </div>
-        </div>
-        <div class="item">
-          <div class="img">
-            <img src="@/assets/img/hero-2.jpg" alt="" class="pic" />
-          </div>
-          <div class="content">
-            <h4 class="name">Weddings</h4>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Accusamus fugit dolorum earum, non possimus quaerat omnis dolorem,
-              sapiente temporibus perspiciatis harum laboriosam repellendus quo
-              molestias quas mollitia! Unde accusantium repellat officiis qui,
-              facere eligendi sint alias, suscipit nemo dolorem illo!
-            </p>
-            <p>
-              perspiciatis harum laboriosam repellendus quo molestias quas
-              mollitia! Unde accusantium repellat officiis qui, facere eligendi
-              sint alias, suscipit nemo dolorem illo!
-            </p>
-          </div>
-        </div>
-        <div class="item">
-          <div class="img">
-            <img src="@/assets/img/hero-3.jpg" alt="" class="pic" />
-          </div>
-          <div class="content">
-            <h4 class="name">Weddings</h4>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Accusamus fugit dolorum earum, non possimus quaerat omnis dolorem,
-              sapiente temporibus perspiciatis harum laboriosam repellendus quo
-              molestias quas mollitia! Unde accusantium repellat officiis qui,
-              facere eligendi sint alias, suscipit nemo dolorem illo!
-            </p>
-            <p>
-              perspiciatis harum laboriosam repellendus quo molestias quas
-              mollitia! Unde accusantium repellat officiis qui, facere eligendi
-              sint alias, suscipit nemo dolorem illo!
-            </p>
+            <h1 class="name">{{ item.title }}</h1>
+            <div class="desc" v-html="item.desc"></div>
           </div>
         </div>
       </div>
@@ -71,7 +18,9 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: ['services'],
+}
 </script>
 
 <style scoped>
@@ -111,7 +60,7 @@ export default {}
   font-weight: 600;
   margin-bottom: 16px;
 }
-.item p {
+.desc {
   font-size: 18px;
   line-height: 150%;
   opacity: 0.9;

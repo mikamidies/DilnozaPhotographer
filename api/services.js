@@ -1,10 +1,10 @@
 export default {
-  async getPhotos(axios) {
+  async getServices(axios) {
     try {
       let res
 
       if (axios) {
-        res = await axios.get('/images')
+        res = await axios.get('/services')
       }
 
       return res.data.results

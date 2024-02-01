@@ -1,53 +1,38 @@
 <template>
   <div class="wrap">
     <div class="container">
-      <h4 class="title section__title">Workflow</h4>
+      <h1 class="title section__title"></h1>
       <div class="levels">
         <div class="level">
           <div class="num">
-            <p>1</p>
+            <p></p>
           </div>
-          <p class="text">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni aut
-            saepe perferendis quas dolores dolorem!
-          </p>
+          <p class="text"></p>
         </div>
         <div class="level">
           <div class="num">
-            <p>2</p>
+            <p></p>
           </div>
-          <p class="text">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni aut
-            saepe perferendis quas dolores dolorem!
-          </p>
+          <p class="text"></p>
         </div>
         <div class="level">
           <div class="num">
-            <p>3</p>
+            <p></p>
           </div>
-          <p class="text">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni aut
-            saepe perferendis quas dolores dolorem!
-          </p>
+          <p class="text"></p>
         </div>
         <div class="level"></div>
         <div class="level">
           <div class="num">
-            <p>5</p>
+            <p></p>
           </div>
-          <p class="text">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni aut
-            saepe perferendis quas dolores dolorem!
-          </p>
+          <p class="text"></p>
         </div>
         <div class="level">
           <div class="num">
-            <p>4</p>
+            <p>1</p>
           </div>
-          <p class="text">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni aut
-            saepe perferendis quas dolores dolorem!
-          </p>
+          <p class="text"></p>
         </div>
       </div>
     </div>

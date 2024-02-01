@@ -2,18 +2,12 @@
   <div class="wrap">
     <div class="container">
       <div class="top">
-        <h1 class="title">Wedding Photographer</h1>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea numquam
-          adipisci placeat vitae optio labore. Doloribus saepe earum soluta
-          deleniti quaerat error dolor praesentium excepturi!
-        </p>
+        <h4 class="title"></h4>
+        <p></p>
       </div>
       <div class="bottom">
         <div class="images">
-          <img src="@/assets/img/hero-1.jpg" alt="" />
-          <img src="@/assets/img/hero-2.jpg" alt="" />
-          <img src="@/assets/img/hero-3.jpg" alt="" />
+          <img v-for="item in photos" :key="item.id" :src="item.image" alt="" />
         </div>
       </div>
     </div>
@@ -21,7 +15,9 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: ['photos'],
+}
 </script>
 
 <style scoped>

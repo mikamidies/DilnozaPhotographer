@@ -2,10 +2,10 @@
   <div class="master">
     <DesktopHeader />
     <main class="main">
-      <HomeHero />
-      <HomeServices />
+      <HomeHero :photos="photos" />
+      <HomeServices :services="services" />
       <HomeGallery :photos="photos" />
-      <HomeOffer />
+      <HomeOffer :services="services" />
       <HomeWorkflow />
     </main>
     <DesktopFooter />
@@ -13,7 +13,8 @@
 </template>
 
 <script>
-import imagesApi from '@/api/photos'
+import imagesApi from '@/api/photos.js'
+import servicesApi from '@/api/services.js'
 
 export default {
   name: 'IndexPage',
@@ -21,10 +22,12 @@ export default {
   mounted() {},
 
   async asyncData({ $axios }) {
-    const photos = await imagesApi.getCertificates($axios)
+    const photos = await imagesApi.getPhotos($axios)
+    const services = await servicesApi.getServices($axios)
 
     return {
       photos,
+      services,
     }
   },
 }

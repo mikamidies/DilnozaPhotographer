@@ -3,24 +3,24 @@
     <div class="container">
       <div class="left">
         <NuxtLink to="/">
-          DilnozaPhotographer <img src="@/assets/img/logo.png" alt="" />
+          <img src="@/assets/img/logo.png" alt="" />
         </NuxtLink>
       </div>
       <div class="mid">
         <ul>
           <li>
-            <button>Home</button>
+            <button></button>
           </li>
           <li>
-            <button>Services</button>
+            <button></button>
           </li>
           <li>
-            <button>Contacts</button>
+            <button></button>
           </li>
         </ul>
       </div>
       <div class="right">
-        <button>Contact Me!</button>
+        <button></button>
       </div>
     </div>
   </div>
