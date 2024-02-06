@@ -103,6 +103,8 @@ export default {
   },
 
   mounted() {
+    console.log(this.services)
+
     this.services.forEach((element) => {
       new Swiper('.swiper' + element.id, {
         spaceBetween: 24,

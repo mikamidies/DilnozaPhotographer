@@ -11,7 +11,12 @@
       </div>
       <div class="bottom">
         <div class="images">
-          <img v-for="item in photos" :key="item.id" :src="item.image" alt="" />
+          <img
+            v-for="item in lastPhotos"
+            :key="item.id"
+            :src="item.image"
+            alt=""
+          />
         </div>
       </div>
     </div>
@@ -21,6 +26,18 @@
 <script>
 export default {
   props: ['photos'],
+
+  data() {
+    return {
+      lastPhotos: '',
+    }
+  },
+
+  mounted() {
+    const lastPhotos = this.photos.slice(-3)
+
+    this.lastPhotos = lastPhotos
+  },
 }
 </script>
 
