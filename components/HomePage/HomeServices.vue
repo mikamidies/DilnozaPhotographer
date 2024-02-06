@@ -24,7 +24,7 @@
           class="content"
         >
           <div class="mid">
-            <p class="text" v-html="serv.desc"></p>
+            <div class="text" v-html="serv.desc"></div>
           </div>
           <div class="right">
             <div class="buttons">
@@ -190,9 +190,14 @@ export default {
 .left button.active {
   background: var(--main);
 }
-.mid p {
+.text {
   font-size: 18px;
   line-height: 150%;
+}
+.text :deep(p) {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
 }
 .content {
   gap: 24px;

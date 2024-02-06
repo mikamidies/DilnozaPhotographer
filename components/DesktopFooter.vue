@@ -9,16 +9,16 @@
             </h1>
             <div class="item">
               <p class="sup">{{ $store.state.translations['main.number'] }}</p>
-              <a href="">+998 90 140 00 00</a>
+              <a :href="`tel:${info.nbm}`">{{ info.nbm }}</a>
             </div>
             <div class="item">
               <p class="sup">{{ $store.state.translations['main.email'] }}</p>
-              <a href="mailto:">DilnozaInfo@gmail.com</a>
+              <a :href="`mailto:${info.email}`">{{ info.email }}</a>
             </div>
             <div class="item">
               <p class="sup">{{ $store.state.translations['main.socs'] }}</p>
               <div class="socs">
-                <a target="_blank" href="#">
+                <a target="_blank" :href="info.instagram">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -45,7 +45,7 @@
                     />
                   </svg>
                 </a>
-                <a target="_blank" href="#">
+                <a target="_blank" :href="info.telegram">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
@@ -71,10 +71,14 @@
               <input
                 type="text"
                 :placeholder="$store.state.translations['main.name']"
+                required
+                v-model="name"
               />
               <input
                 type="text"
                 :placeholder="$store.state.translations['main.number']"
+                required
+                v-model="phone_number"
               />
               <button type="submit">
                 {{ $store.state.translations['main.submit'] }}
@@ -86,7 +90,9 @@
           </div>
         </div>
         <div class="by">
-          <a href="#">{{ $store.state.translations['main.by'] }}</a>
+          <a target="_blank" href="https://t.me/mikamidies">{{
+            $store.state.translations['main.by']
+          }}</a>
         </div>
       </div>
     </div>
@@ -95,13 +101,22 @@
 
 <script>
 import formApi from '@/api/form.js'
+import infoApi from '@/api/info.js'
 
 export default {
   data() {
     return {
       name: '',
       phone_number: '',
+
+      info: '',
     }
+  },
+
+  async fetch() {
+    const info = await infoApi.getInfos(this.$axios)
+
+    this.info = info
   },
 
   methods: {
@@ -114,9 +129,13 @@ export default {
       const res = await formApi.sendApplication(formData)
 
       if (res && res.status === 201) {
-        this.$toast.success('Successfully sent')
+        this.$notification['success']({
+          message: 'Успешно отправлено',
+        })
       } else {
-        this.$toast.error('Error')
+        this.$notification['error']({
+          message: 'Ошибка',
+        })
       }
 
       this.name = ''
