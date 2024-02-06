@@ -90,7 +90,7 @@
           </div>
         </div>
         <div class="by">
-          <a target="_blank" href="https://t.me/mikamidies">{{
+          <a target="_blank" href="https://t.me/mikamidies04">{{
             $store.state.translations['main.by']
           }}</a>
         </div>
