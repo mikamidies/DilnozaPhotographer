@@ -1,7 +1,9 @@
 <template>
   <div class="wrap">
     <div class="container">
-      <h4 class="title section__title"></h4>
+      <h4 class="title section__title">
+        {{ $store.state.translations['main.offer'] }}
+      </h4>
       <div class="items">
         <div v-for="item in services" :key="item.id" class="item">
           <div class="img">

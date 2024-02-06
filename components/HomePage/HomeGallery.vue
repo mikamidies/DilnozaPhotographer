@@ -1,7 +1,9 @@
 <template>
   <div class="wrap">
     <div class="container">
-      <h4 class="title section__title"></h4>
+      <h4 class="title section__title">
+        {{ $store.state.translations['main.works'] }}
+      </h4>
       <div class="grid" id="lightgallery">
         <a
           v-for="item in photos"

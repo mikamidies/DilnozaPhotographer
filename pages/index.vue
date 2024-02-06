@@ -15,11 +15,37 @@
 <script>
 import imagesApi from '@/api/photos.js'
 import servicesApi from '@/api/services.js'
+import translationsApi from '@/api/translations.js'
 
 export default {
   name: 'IndexPage',
 
-  mounted() {},
+  data() {
+    return {
+      translations: [],
+    }
+  },
+
+  async mounted() {
+    const map = await this.$axios.get(
+      'https://nominatim.openstreetmap.org/search?format=json&q=toshkent'
+    )
+
+    const translations = await translationsApi.getTranslations(this.$axios)
+
+    await this.$store.commit('getTranslations', translations.data)
+  },
+
+  watch: {
+    async currentLang() {
+      const translations = await translationsApi.getTranslations(
+        this.$axios,
+        {}
+      )
+
+      await this.$store.commit('getTranslations', translations.data)
+    },
+  },
 
   async asyncData({ $axios }) {
     const photos = await imagesApi.getPhotos($axios)

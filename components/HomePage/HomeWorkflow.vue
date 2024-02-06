@@ -1,38 +1,40 @@
 <template>
   <div class="wrap">
     <div class="container">
-      <h1 class="title section__title"></h1>
+      <h1 class="title section__title">
+        {{ $store.state.translations['main.title'] }}
+      </h1>
       <div class="levels">
-        <div class="level">
-          <div class="num">
-            <p></p>
-          </div>
-          <p class="text"></p>
-        </div>
-        <div class="level">
-          <div class="num">
-            <p></p>
-          </div>
-          <p class="text"></p>
-        </div>
-        <div class="level">
-          <div class="num">
-            <p></p>
-          </div>
-          <p class="text"></p>
-        </div>
-        <div class="level"></div>
-        <div class="level">
-          <div class="num">
-            <p></p>
-          </div>
-          <p class="text"></p>
-        </div>
         <div class="level">
           <div class="num">
             <p>1</p>
           </div>
-          <p class="text"></p>
+          <p class="text">{{ $store.state.translations['workflow.step_1'] }}</p>
+        </div>
+        <div class="level">
+          <div class="num">
+            <p>2</p>
+          </div>
+          <p class="text">{{ $store.state.translations['workflow.step_2'] }}</p>
+        </div>
+        <div class="level">
+          <div class="num">
+            <p>3</p>
+          </div>
+          <p class="text">{{ $store.state.translations['workflow.step_3'] }}</p>
+        </div>
+        <div class="level"></div>
+        <div class="level">
+          <div class="num">
+            <p>5</p>
+          </div>
+          <p class="text">{{ $store.state.translations['workflow.step_4'] }}</p>
+        </div>
+        <div class="level">
+          <div class="num">
+            <p>4</p>
+          </div>
+          <p class="text">{{ $store.state.translations['workflow.step_5'] }}</p>
         </div>
       </div>
     </div>

@@ -2,7 +2,9 @@
   <div class="wrap">
     <div class="container">
       <div class="header">
-        <h4 class="title section__title"></h4>
+        <h4 class="title section__title">
+          {{ $store.state.translations['main.services'] }}
+        </h4>
       </div>
       <div class="grid">
         <div class="left">
@@ -27,11 +29,46 @@
           <div class="right">
             <div class="buttons">
               <div class="swiper-buttons">
-                <button class="prev" :class="`prev` + serv.id"></button>
-                <button class="next" :class="`next` + serv.id"></button>
-              </div>
-              <div class="pagination">
-                <div class="swiper-pagination"></div>
+                <button class="prev" :class="`prev` + serv.id">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M10 8L6 12M6 12L10 16M6 12L18 12"
+                      stroke="#28303F"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+                <div class="pagination">
+                  <div
+                    class="swiper-pagination"
+                    :class="`swiper-pagination` + serv.id"
+                  ></div>
+                </div>
+                <button class="next" :class="`next` + serv.id">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M14 16L18 12M18 12L14 8M18 12L6 12"
+                      stroke="#28303F"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
               </div>
             </div>
             <div class="swiper servicesSwiper" :class="`swiper` + serv.id">
@@ -113,7 +150,6 @@ export default {
   position: static;
 }
 .pagination {
-  display: none;
 }
 .buttons {
   display: flex;

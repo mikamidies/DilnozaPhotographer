@@ -2,8 +2,12 @@
   <div class="wrap">
     <div class="container">
       <div class="top">
-        <h4 class="title"></h4>
-        <p></p>
+        <h4 class="title">
+          {{ $store.state.translations['main.home_title'] }}
+        </h4>
+        <p>
+          {{ $store.state.translations['main.home_subtitle'] }}
+        </p>
       </div>
       <div class="bottom">
         <div class="images">

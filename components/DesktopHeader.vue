@@ -4,23 +4,24 @@
       <div class="left">
         <NuxtLink to="/">
           <img src="@/assets/img/logo.png" alt="" />
+          {{ $store.state.translations['main.title'] }}
         </NuxtLink>
       </div>
       <div class="mid">
         <ul>
           <li>
-            <button></button>
+            <button>{{ $store.state.translations['main.services'] }}</button>
           </li>
           <li>
-            <button></button>
+            <button>{{ $store.state.translations['main.works'] }}</button>
           </li>
           <li>
-            <button></button>
+            <button>{{ $store.state.translations['main.contacts'] }}</button>
           </li>
         </ul>
       </div>
       <div class="right">
-        <button></button>
+        <button>{{ $store.state.translations['main.contact_me'] }}</button>
       </div>
     </div>
   </div>
