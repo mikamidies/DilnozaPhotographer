@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+  <div class="wrap" id="contacts">
     <div class="container">
       <div class="cardo">
         <div class="grid">

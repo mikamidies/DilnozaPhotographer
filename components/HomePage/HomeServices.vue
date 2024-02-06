@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+  <div class="wrap" id="services">
     <div class="container">
       <div class="header">
         <h4 class="title section__title">

@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+  <div class="wrap" id="works">
     <div class="container">
       <h4 class="title section__title">
         {{ $store.state.translations['main.works'] }}

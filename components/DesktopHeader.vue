@@ -10,25 +10,40 @@
       <div class="mid">
         <ul>
           <li>
-            <button>{{ $store.state.translations['main.services'] }}</button>
+            <button @click="scrollElement('services')">
+              {{ $store.state.translations['main.services'] }}
+            </button>
           </li>
           <li>
-            <button>{{ $store.state.translations['main.works'] }}</button>
+            <button @click="scrollElement('works')">
+              {{ $store.state.translations['main.works'] }}
+            </button>
           </li>
           <li>
-            <button>{{ $store.state.translations['main.contacts'] }}</button>
+            <button @click="scrollElement('contacts')">
+              {{ $store.state.translations['main.contacts'] }}
+            </button>
           </li>
         </ul>
       </div>
       <div class="right">
-        <button>{{ $store.state.translations['main.contact_me'] }}</button>
+        <button @click="scrollElement('contacts')">
+          {{ $store.state.translations['main.contact_me'] }}
+        </button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  methods: {
+    scrollElement(id) {
+      const element = document.getElementById(id)
+      element.scrollIntoView({ block: 'start', behavior: 'smooth' })
+    },
+  },
+}
 </script>
 
 <style scoped>
