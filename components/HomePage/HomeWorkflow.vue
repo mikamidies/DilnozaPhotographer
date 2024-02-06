@@ -2,7 +2,7 @@
   <div class="wrap">
     <div class="container">
       <h1 class="title section__title">
-        {{ $store.state.translations['main.title'] }}
+        {{ $store.state.translations['main.workflow'] }}
       </h1>
       <div class="levels">
         <div class="level">
