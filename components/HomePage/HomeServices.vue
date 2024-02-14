@@ -190,7 +190,7 @@ export default {
   transition: 0.4s;
 }
 .left button.active {
-  background: var(--main);
+  background: var(--dark);
 }
 .text {
   font-size: 18px;

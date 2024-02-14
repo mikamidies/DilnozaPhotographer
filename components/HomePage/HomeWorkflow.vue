@@ -58,7 +58,8 @@ export default {}
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: var(--light);
+  background: var(--dark);
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,13 +77,13 @@ export default {}
   margin-top: 16px;
 }
 .level {
-  border-top: 2px solid var(--main);
+  border-top: 2px solid var(--light);
 }
 .level:nth-child(4) {
   border: 0;
 }
 .level:nth-child(3) {
-  border-right: 2px solid var(--main);
+  border-right: 2px solid var(--light);
   padding-bottom: 58px;
 }
 @media screen and (max-width: 1024px) {

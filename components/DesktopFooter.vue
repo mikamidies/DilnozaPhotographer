@@ -130,7 +130,7 @@ export default {
 
       if (res && res.status === 201) {
         this.$notification['success']({
-          message: 'Успешно отправлено',
+          message: 'Successfully sent !',
         })
       } else {
         this.$notification['error']({
